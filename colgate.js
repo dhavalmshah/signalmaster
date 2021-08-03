@@ -8,10 +8,4 @@ function _mybot(d, w, c) {
     }
 }
 
-let stateCheck = setInterval(() => {
-    if (document.readyState === 'complete') {
-        clearInterval(stateCheck);
-        console.log(document.readyState);
-        _mybot(document, window, function () { Freshbots.initiateWidget({ autoInitChat: false, getClientParams: function () { return { "sn::cstmr::id": "" }; } }, function (successResponse) { }, function (errorResponse) { }); });
-    }
-}, 100);
+_mybot(document, window, function () { Freshbots.initiateWidget({ autoInitChat: false, getClientParams: function () { return { "sn::cstmr::id": "" }; } }, function (successResponse) { }, function (errorResponse) { }); });
